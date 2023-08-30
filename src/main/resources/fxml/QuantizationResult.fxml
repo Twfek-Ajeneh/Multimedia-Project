@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="750.0" prefWidth="1024.0" style="-fx-background-color: #FCF6FF;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.QuantizationResultController">
+   <children>
+      <ScrollPane prefHeight="750.0" prefWidth="1024.0">
+        <content>
+          <AnchorPane maxHeight="750.0" maxWidth="1024.0" minHeight="750.0" minWidth="1024.0" prefHeight="750.0" prefWidth="1024.0" style="-fx-background-color: #FCF6FF;">
+               <children>
+                  <ImageView fx:id="originalImage" fitHeight="250.0" fitWidth="300.0" layoutX="41.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true" />
+                  <Button layoutX="898.0" layoutY="692.0" mnemonicParsing="false" onAction="#save" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: #9900cc;" text="Save" textAlignment="CENTER" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="25.0" layoutY="692.0" mnemonicParsing="false" onAction="#goBack" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: #9900cc;" text="Go Back" textAlignment="CENTER" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <ListView fx:id="colorPalette" editable="true" layoutX="713.0" layoutY="33.0" prefHeight="250.0" prefWidth="300.0" />
+                  <ImageView fx:id="imageView" fitHeight="250.0" fitWidth="300.0" layoutX="372.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true" />
+                  <Button layoutX="764.0" layoutY="692.0" mnemonicParsing="false" onAction="#IndexedImage" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: #9900cc;" text="Indexed Image" textAlignment="CENTER" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <AreaChart fx:id="histogramChart" layoutX="27.0" layoutY="296.0" prefHeight="396.0" prefWidth="990.0" title="Histogram">
+                    <xAxis>
+                      <NumberAxis side="BOTTOM" tickLabelGap="1.0" tickUnit="1.0" upperBound="255.0" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </AreaChart>
+                  <Label layoutX="41.0" layoutY="10.0" text="The Original Image :">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="newImageLabel" layoutX="372.0" layoutY="10.0" text="The new Image :">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="newImageLabel1" layoutX="713.0" layoutY="10.0" text="Color Palette :">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #FCF6FF;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.SearchController">
+   <children>
+      <ImageView fx:id="imageView" fitHeight="250.0" fitWidth="400.0" layoutX="25.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="165.0" layoutY="299.0" mnemonicParsing="false" onAction="#selectImage" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: #9900cc;" text="Select Image" textAlignment="CENTER" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <ListView fx:id="directoryList" layoutX="430.0" layoutY="26.0" prefHeight="250.0" prefWidth="250.0" />
+      <Button layoutX="495.0" layoutY="299.0" mnemonicParsing="false" onAction="#selectDirectory" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: #9900cc;" text="Select Directory" textAlignment="CENTER" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <ColorPicker fx:id="colorPicker" layoutX="100.0" layoutY="391.0" onAction="#selectColors" />
+      <Label layoutX="100.0" layoutY="365.0" text="Choose Colors : " />
+      <DatePicker fx:id="datePicker" layoutX="283.0" layoutY="392.0" onAction="#selectDate" promptText="Enter a date" />
+      <Label layoutX="283.0" layoutY="365.0" text="Choose Date : " />
+      <TextField fx:id="widthField" layoutX="497.0" layoutY="392.0" prefHeight="26.0" prefWidth="78.0" />
+      <TextField fx:id="heightField" layoutX="601.0" layoutY="392.0" prefHeight="26.0" prefWidth="78.0" />
+      <Label layoutX="497.0" layoutY="365.0" text="Width :" />
+      <Label layoutX="601.0" layoutY="365.0" text="Height :" />
+      <Button layoutX="666.0" layoutY="546.0" mnemonicParsing="false" onAction="#submit" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: #005757;" text="Submit" textAlignment="CENTER" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <CheckBox fx:id="cut" layoutX="104.0" layoutY="500.0" mnemonicParsing="false" onAction="#isCut" text="Cut The Image " />
+      <TextField disable="true" layoutX="127.0" layoutY="534.0" prefHeight="30.0" prefWidth="50.0" fx:id="x1Field" />
+      <Label layoutX="100.0" layoutY="540.0" text="X1" />
+      <TextField fx:id="y1Field" disable="true" layoutX="219.0" layoutY="535.0" prefHeight="30.0" prefWidth="50.0" />
+      <Label layoutX="192.0" layoutY="541.0" text="Y1" />
+      <TextField disable="true" layoutX="305.0" layoutY="534.0" prefHeight="30.0" prefWidth="50.0" fx:id="x2Field" />
+      <Label layoutX="278.0" layoutY="540.0" text="X2" />
+      <TextField fx:id="y2Field" disable="true" layoutX="389.0" layoutY="535.0" prefHeight="30.0" prefWidth="50.0" />
+      <Label layoutX="362.0" layoutY="541.0" text="Y2" />
+      <Label fx:id="imageWidth" layoutX="258.0" layoutY="500.0" text="Image Width : " />
+      <Label fx:id="imageHeight" layoutX="442.0" layoutY="500.0" text="Image Height : " />
+      <TextField fx:id="newWidth" layoutX="176.0" layoutY="448.0" prefHeight="30.0" prefWidth="100.0" />
+      <TextField fx:id="newHeight" layoutX="383.0" layoutY="448.0" prefHeight="30.0" prefWidth="100.0" />
+      <Label layoutX="307.0" layoutY="454.0" text="New Height :" />
+      <Label layoutX="100.0" layoutY="454.0" text="New Width :" />
+      <Button layoutX="504.0" layoutY="447.0" mnemonicParsing="false" onAction="#changeDimensions" prefHeight="30.0" prefWidth="50.0" style="-fx-background-color: #D24CFF;" text="Apply" textAlignment="CENTER" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Rectangle fx:id="cropRect" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff7f" height="10.0" layoutX="25.0" layoutY="26.0" opacity="0.0" stroke="#0112ff" strokeType="INSIDE" width="10.0" />
+   </children>
+</AnchorPane>
